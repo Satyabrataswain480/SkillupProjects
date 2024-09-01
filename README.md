@@ -52,3 +52,16 @@ After the pipeline runs successfully, you can access your application using the 
 1. If the pipeline hangs or fails, check the console output for errors.
 2. Ensure that Docker and Kubernetes services are running correctly on the Jenkins server.
 3. Verify that your Docker Hub credentials are correctly configured in Jenkins.
+
+**Acknowledgments**
+Jenkins
+Docker
+Kubernetes
+Minikube
+[Uploading index.html…]()<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a simple HTML page served from a Docker container.</p>
+</body>
+</html>
