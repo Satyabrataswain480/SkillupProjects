@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: myhtml-container
-      image: satyabrataswain/myhtmlapp:${env.BUILD_NUMBER}
+      image: satyabrataswain/myhtmlapp:latest
       ports:
       - containerPort: 80
   imagePullSecrets:
