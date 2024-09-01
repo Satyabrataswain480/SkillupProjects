@@ -1,0 +1,8 @@
+1. Create a sample html file as index.html.
+    <!DOCTYPE html>
+    <html lang="en">
+    <body>
+        <h1>Hello, World!</h1>
+        <p>This is a simple HTML page served from a Docker container.</p>
+    </body>
+    </html>
