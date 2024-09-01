@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: myhtml-container
-      image: satyabrataswain/myhtmlapp:latest
+      image: satyabrataswain/myhtmlapp:latest # Placeholder, will be updated in the pipeline
       ports:
       - containerPort: 80
   imagePullSecrets:
