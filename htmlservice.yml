@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8989
+    targetPort: 80
+  selector:
+    app: myhtmlapp
+    tier: frontend
