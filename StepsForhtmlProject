@@ -1,0 +1,12 @@
+1. Create a sample html file as index.html.
+2. Crete a Dockerfile which use nginx as base image and copy index.html file to nginx default directory and expose port 80.
+3. Build the Dockerfile using below cmd
+        docker build -t satya-html-app .
+4. It will create a image.
+5. Tag the created image with buildid and Push to Dockerhub private repo.
+6. Here we are defining DOCKER_CREDENTIALS_ID in Manage Jenkins -> Credentils -> System -> GlobalCredentials -> Add Credentials( Refer DockerhubCredentials.png).
+7. Create a Pod and Service for your html app( Refer htmlpod.yml and htmlservice.yml )
+8. Push all your changes to Github
+9. Create a Jenkins Pipeline to pull changes from github -> Build the Dockerfile -> Push the Image to Docker hub with current Build id -> Deploy to Kubernetes (Refer Jenkinsfile)
+10. Make sure you are cleaning up the resources post your successful run.
+    
