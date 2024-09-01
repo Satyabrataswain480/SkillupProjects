@@ -1,0 +1,13 @@
+#Deploy a Pod
+kubectl apply -f htmlpod.yml 
+#Deploy a Service and link to Pod
+kubectl apply -f htmlservice.yml
+
+#Validate Pod is created or not
+kubectl get pods
+
+#Validate Service is created and linked to pod
+kubectl get services
+
+#Below cmd will show you the URL, using the same URL you can browse the html app
+minikube service myhtmlapp-service --url

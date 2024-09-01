@@ -1,0 +1,26 @@
+# Create the docker image by building your app
+docker build -t satya-html-app .
+
+# Verify the image
+docker images
+
+# login to dockerhub
+docker login
+
+# Tag the created image
+docker tag satya-html-app satyabrataswain/skillupdemo:html.v1
+
+# Push the tagged image to docker hub
+docker push satyabrataswain/skillupdemo:html.v1
+
+# Remove the local image
+docker rmi satya-html-app
+
+# Pull the from from docker registry
+docker pull satyabrataswain/skillupdemo:html.v1
+
+# Run a container out of the image
+docker run -d -p 8283:80 --name myhtmlapp satyabrataswain/skillupdemo:html.v1
+
+# Browse
+Browse http://localhost:8283/
