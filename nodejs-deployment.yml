@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image:  satyabrataswain/devops-capstone-project:v1  # Replace with your Docker image
+        image:  satyabrataswain/devops-capstone-project:v3  # Replace with your Docker image
         ports:
         - containerPort: 8787
         env:
         - name: DB_HOST
-          value: "capstone-project-db-1"
+          value: "mysql-service"
         - name: DB_USER
           value: "root"
         - name: DB_PASSWORD

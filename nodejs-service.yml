@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: nodejs-service
 spec:
-  type: NodePort
+  type: LoadBalancer  # Change from NodePort to LoadBalancer
   ports:
-    - port: 8787
-      targetPort: 8787
-      nodePort: 30001   # You can specify the port you want to access externally.
+    - port: 8787        # The port that the service will expose
+      targetPort: 8787  # The port on the pod that the service should forward to
   selector:
-    app: nodejs-app
+    app: nodejs-app     # Ensure this matches the labels on your Node.js pods
