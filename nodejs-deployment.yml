@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image:  ${DOCKER_IMAGE_NAME}:${env.BUILD_NUMBER}  # Replace with your Docker image
+        image: satyabrataswain/devops-capstone-project:latest  # Replace with your Docker image
         ports:
         - containerPort: 8787
         env:
