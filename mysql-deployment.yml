@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "root"
+        - name: MYSQL_DATABASE
+          value: "demo"
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: init-sql-volume
+          mountPath: /docker-entrypoint-initdb.d
+      volumes:
+      - name: init-sql-volume
+        configMap:
+          name: init-sql-configmap
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: init-sql-configmap
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS demo;
+
+    USE demo;
+
+    CREATE TABLE IF NOT EXISTS employee (
+    empid int NOT NULL,
+    ename VARCHAR(255) NOT NULL,
+    salary int NOT NULL
+    );
+
+    INSERT INTO employee (empid, ename, salary) VALUES
+    (1,'John P', 99000),
+    (2,'Jonathan Smith', 75000),
+    (3, 'Emily Johnson', 50000);

@@ -1,0 +1,14 @@
+{
+    "name": "webserver",
+    "version": "1.0.0",
+    "description": "A simple Node.js application with Express and MySQL",
+    "main": "webservice.js",  
+    "scripts": {
+      "start": "node webservice.js"  
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "body-parser": "^1.19.0",
+      "mysql": "^2.18.1"
+    }
+  }
